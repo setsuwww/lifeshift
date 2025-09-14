@@ -1,28 +1,33 @@
-@extends('layouts.main')
-
+@extends('layouts.admin')
 @section('content')
-<h1 class="text-2xl font-bold mb-4">Create User</h1>
+<h1>Create User</h1>
 
-<form action="{{ route('users.store') }}" method="POST" class="space-y-4">
+<form action="{{ route('admin.users.store') }}" method="POST">
     @csrf
     <div>
-        <label class="block text-sm">Name</label>
-        <input type="text" name="name" class="w-full border p-2 rounded" value="{{ old('name') }}" required>
-        @error('name') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
+        <label>Name</label>
+        <input type="text" name="name" value="{{ old('name') }}" required>
     </div>
+
     <div>
-        <label class="block text-sm">Email</label>
-        <input type="email" name="email" class="w-full border p-2 rounded" value="{{ old('email') }}" required>
-        @error('email') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
+        <label>Email</label>
+        <input type="email" name="email" value="{{ old('email') }}" required>
     </div>
+
     <div>
-        <label class="block text-sm">Password</label>
-        <input type="password" name="password" class="w-full border p-2 rounded" required>
-        @error('password') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
+        <label>Password</label>
+        <input type="password" name="password" required>
     </div>
+
     <div>
-        <button class="bg-blue-600 text-white px-4 py-2 rounded">Save</button>
-        <a href="{{ route('users.index') }}" class="ml-2 text-gray-600 hover:underline">Cancel</a>
+        <label>Role</label>
+        <select name="role" required>
+            <option value="Admin">Admin</option>
+            <option value="Coordinator">Coordinator</option>
+            <option value="User" selected>User</option>
+        </select>
     </div>
+
+    <button type="submit">Create User</button>
 </form>
 @endsection

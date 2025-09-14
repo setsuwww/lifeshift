@@ -12,24 +12,22 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role',
+        'name', 'email', 'password', 'role',
     ];
 
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
-    public function schedules()
+    // Relasi: User punya banyak kehadiran
+    public function attendances()
     {
-        return $this->belongsToMany(Schedule::class);
+        return $this->hasMany(Attendance::class);
     }
 
+    // Relasi: User punya banyak kehadiran lewat shift
     public function shifts()
     {
-        return $this->belongsToMany(Shift::class);
+        return $this->belongsToMany(Shift::class, 'attendances');
     }
 }
