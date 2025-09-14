@@ -19,14 +19,35 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Gugugaga',
-            'email' => 'employee@example.com',
+            'email' => 'gugugaga@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'employee',
+        ]);
+
+        User::create([
+            'name' => 'Fufufafa',
+            'email' => 'fufufafa@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'employee',
+        ]);
+
+        User::create([
+            'name' => 'LSigmas',
+            'email' => 'lsigmas@example.com',
             'password' => Hash::make('password'),
             'role' => 'employee',
         ]);
 
         User::create([
             'name' => 'Npc',
-            'email' => 'user@example.com',
+            'email' => 'npc@x.com',
+            'password' => Hash::make('password'),
+            'role' => 'user',
+        ]);
+
+        User::create([
+            'name' => 'Bot',
+            'email' => 'bot@g.com',
             'password' => Hash::make('password'),
             'role' => 'user',
         ]);

@@ -45,5 +45,8 @@
   .lifeshift-logo {
     font-family: var(--logo-font);
   }
+  a, button:hover {
+    cursor: pointer;
+  }
 }
 

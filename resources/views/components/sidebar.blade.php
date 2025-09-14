@@ -29,6 +29,12 @@
                 <x-sidebar-sublink href="{{ route('admin.attendances.index') }}">Attendances</x-sidebar-sublink>
             </x-sidebar-group>
 
+            <x-sidebar-group title="Create">
+                <x-sidebar-sublink href="{{ route('admin.users.create') }}">Add Users</x-sidebar-sublink>
+                <x-sidebar-sublink href="{{ route('admin.schedules.create') }}">Add Schedules</x-sidebar-sublink>
+                <x-sidebar-sublink href="{{ route('admin.shifts.create') }}">Add Shifts</x-sidebar-sublink>
+            </x-sidebar-group>
+            
             <x-sidebar-link href="#" icon="settings">
                 Settings
             </x-sidebar-link>

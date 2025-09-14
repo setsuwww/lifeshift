@@ -11,7 +11,7 @@
     <div class="w-full max-w-md bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl p-8">
         <div class="text-center mb-8">
             <h1 class="text-3xl font-extrabold text-violet-400 tracking-widest"></h1>
-            <x-assets.Liveshift />
+            <x-assets.liveshift />
         </div>
 
         <form method="POST" action="{{ url('/login') }}" class="space-y-6">
@@ -34,7 +34,7 @@
                 <a href="#" class="text-violet-400 hover:underline">Forgot password?</a>
             </div>
 
-            <button type="submit" class="w-full btn-primary">
+            <button type="submit" class="w-full btn-auth">
                 Login
             </button>
         </form>
